@@ -4,19 +4,28 @@ import { Link } from 'react-router-dom'
 
 const Books = () => {
 
-    const [books, setBooks] = useState([])
+    const [books, setBooks] = useState([]);
 
     useEffect(() => {
         const fetchAll = async ()=> {
             try{
-                const res = await axios.get("http://localhost:8080/books")
-                setBooks(res.data)
+                const res = await axios.get("http://localhost:8080/books");
+                setBooks(res.data);
             }catch(err) {
-                console.log(err)
+                console.log(err);
             }
         }
-        fetchAll()
-    }, [])
+        fetchAll();
+    }, []);
+
+    const handleDelete = async (mangaID) => {
+        try{
+            await axios.delete("http://localhost:8080/books/" + mangaID)
+            window.location.reload();
+        }catch(err){
+            console.log(err);
+        }
+    }
 
   return (
     <div>
@@ -27,13 +36,17 @@ const Books = () => {
                     {book.mangaCover && <img src={book.mangaCover} alt="" />}
                     <h2>{book.mangaTitle}</h2>
                     <p>{book.mangaDesc}</p>
+                    <button className='delete' onClick={()=>handleDelete(book.mangaID)}>Delete</button>
+                    <button className='update'>Update</button>
                 </div>
             ))}
         </div>
-
-        <button>
-            <Link to="/add">Add New Manga</Link>
-        </button>
+        
+        <div>
+            <button>
+                <Link to="/add">Add New Manga</Link>
+            </button>
+        </div>
     </div>
   )
 }

@@ -44,6 +44,18 @@ app.post("/books", (req, res) => {
     });
 });
 
+
+app.delete("/books/:mangaID", (req, res) => {
+    const bookID = req.params.mangaID;
+    const q = "DELETE FROM mangatable WHERE mangaID = ?"
+
+    db.query(q, [bookID], (err, data) => {
+        if(err) return res.json(err);
+        return res.json("Book Has Been Deleted!");
+    });
+});
+
+
 app.listen(8080, () =>{
     console.log("Connected!");
 });
