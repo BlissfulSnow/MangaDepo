@@ -1,23 +1,52 @@
 .App{
-    height: 105vh;
+    height: 100%;
     padding: 0px 100px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    background: rgb(174,199,238);
+    background: linear-gradient(43deg, rgba(174,199,238,1) 0%, rgba(7,18,29,1) 77%);
 }
 
+.title{
+    color: white;
+}
+
+.readmorebutton{
+    background-color: #555555;
+    color: white;
+    padding-bottom: 5px;
+}
+
+.deletebutton{
+    padding-top: 5px;
+}
+.updatebutton{
+    padding-top: 5px;
+}
+
+.row {
+    display: flex;
+    width: 100%; /* Ensure rows take up the full width */
+    justify-content: space-between; /* Align items evenly across the row */
+    margin-bottom: 20px; /* Adjust spacing between rows */
+}
 
 .books{
     display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Align items starting from the left */
+
 }
 
 .book{
-    flex: 1;
+    flex: 1 0 23%; /* Adjust the width of each book to leave space for margins */
+    margin: 0 1%; /* Adjust the margins between books */
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    align-items: center;
+    align-items: center; /* Center content horizontally */
+    color: white;
 }
 
 img{
@@ -28,19 +57,40 @@ img{
 }
 
 .delete{
-    border: none;
     padding: 3px 6px;
-    background-color: white;
     cursor: pointer;
-    border: 1px solid rgb(245, 191, 191);
     color: rgb(242, 100, 100);
+    background-color: #555555;
+    border-radius: 8px;
+
 }
 
 .update{
-    border: none;
     padding: 3px 6px;
-    background-color: white;
+    background-color: #555555;
     cursor: pointer;
-    border: 1px solid rgb(204, 204, 243);
     color: rgb(139, 139, 234);
+    border-radius: 8px;
+}
+
+.addnewmanga{
+    padding-bottom : 30px;
+}
+
+.button1{
+    background-color: #555555;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.addtext{
+    color: white;
 }
