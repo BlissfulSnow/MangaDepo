@@ -29,6 +29,14 @@ app.get("/books", (req, res) => {
     });
 });
 
+app.get("/anime", (req, res) => {
+    const q = "SELECT * FROM animetable";
+    db.query(q, (err, data) => {
+        if(err) return res.json(err);
+        return res.json(data);
+    });
+});
+
 
 app.post("/books", (req, res) => {
     const q = "INSERT INTO mangatable (`mangaTitle`, `mangaDesc`, `mangaCover`) VALUES (?)";

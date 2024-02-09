@@ -1,4 +1,5 @@
 .App{
+    min-height: 100vh;
     height: 100%;
     padding: 0px 100px;
     display: flex;
@@ -41,6 +42,22 @@
 }
 
 .book{
+    flex: 1 0 23%; /* Adjust the width of each book to leave space for margins */
+    margin: 0 1%; /* Adjust the margins between books */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    color: white;
+}
+
+.animes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Align items starting from the left */
+
+}
+
+.anime{
     flex: 1 0 23%; /* Adjust the width of each book to leave space for margins */
     margin: 0 1%; /* Adjust the margins between books */
     display: flex;
