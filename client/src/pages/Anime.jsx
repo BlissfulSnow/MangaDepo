@@ -21,7 +21,7 @@ const Anime = () => {
 
 
     return <div>
-      <h1 className='title'>Animes</h1>
+      <h1 className='title'>Animes List</h1>
       <div className='animes'>
         {animes.map((anime, index) => (
           index % 4 === 0 && (
